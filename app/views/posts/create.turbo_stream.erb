@@ -1,0 +1,10 @@
+<% if @post %>
+  <%= turbo_stream.append "posts" do %>
+    <hr>
+    <%= render @post %>
+  <% end %>
+<% end %>
+
+<%= turbo_stream.replace dom_id(@new_post) do %>
+  <%= render "form", post: @new_post %>
+<% end %>

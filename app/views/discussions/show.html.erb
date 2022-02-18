@@ -4,10 +4,12 @@
   <%= link_to "Back to discussions", discussions_path %>
 </div>
 
-<% @discussion.posts.each do |post| %>
-  <hr>
-  <%= render post %>
-<% end %>
+<div id="posts">
+  <% @discussion.posts.each do |post| %>
+    <hr>
+    <%= render post %>
+  <% end %>
+</div>
 
 <hr>
 
