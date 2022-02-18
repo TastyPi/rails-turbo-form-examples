@@ -1,0 +1,10 @@
+<h1><%= @discussion.title %></h1>
+
+<div>
+  <%= link_to "Back to discussions", discussions_path %>
+</div>
+
+<% @discussion.posts.each do |post| %>
+  <hr>
+  <%= render post %>
+<% end %>
