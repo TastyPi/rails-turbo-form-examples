@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  resources :discussions, only: [:index, :show]
+  resources :discussions, only: [:index, :new, :create, :show]
 end

@@ -1,0 +1,18 @@
+<%= form_with model: discussion do |form| %>
+  <% if discussion.errors.any? %>
+    <div role="alert">
+      Could not create a discussion due to the following issues:
+      <ul>
+        <% discussion.errors.each do |error| %>
+          <li><%= error.full_message %>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+  <div><%= form.button %></div>
+<% end %>
