@@ -6,5 +6,7 @@
 
 <% @discussion.posts.each do |post| %>
   <hr>
-  <%= render post %>
+  <%= turbo_frame_tag dom_id(post, "turbo") do %>
+    <%= render post %>
+  <% end %>
 <% end %>
