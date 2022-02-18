@@ -4,7 +4,15 @@
   <%= link_to "Back to discussions", discussions_path %>
 </div>
 
-<% @discussion.posts.each do |post| %>
-  <hr>
-  <%= render post %>
-<% end %>
+<div id="posts">
+  <% @discussion.posts.each do |post| %>
+    <hr>
+    <%= turbo_frame_tag dom_id(post, "turbo") do %>
+      <%= render post %>
+    <% end %>
+  <% end %>
+</div>
+
+<hr>
+
+<%= render "posts/form", post: @new_post %>
