@@ -30,7 +30,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params.require(:id))
-    if @post.update(params.require(:post).permit(:text))
+    if @post.update(params.require(:post).permit(:text, :discussion_id))
       respond_to do |format|
         format.html { redirect_to @post.discussion }
         format.turbo_stream
